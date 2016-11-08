@@ -21,6 +21,9 @@ function export_setting_variables() {
   export MYSQL_MAX_ALLOWED_PACKET=${MYSQL_MAX_ALLOWED_PACKET:-200M}
   export MYSQL_TABLE_OPEN_CACHE=${MYSQL_TABLE_OPEN_CACHE:-400}
   export MYSQL_SORT_BUFFER_SIZE=${MYSQL_SORT_BUFFER_SIZE:-256K}
+  export MYSQL_CHAR_SET=${MYSQL_CHAR_SET:-utf8}
+  export MYSQL_COLLATION=${MYSQL_COLLATION:-utf8_bin} 
+
 
   # Export memory limit variables and calculate limits
   local export_vars=$(cgroup-limits) && export $export_vars || exit 1
